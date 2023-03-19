@@ -70,6 +70,98 @@ public class LoginPage extends BaseTest{
 	@FindBy(xpath="(//Video[@class='video-stream html5-main-video'])[1]")
 	public WebElement playBack;
 
+
+	@FindBy(xpath="(//button[contains(@class,'cta-toggle-btn dh1-hero__sec-btn')])[1]")
+	public WebElement myList;
+
+
+
+	@FindBy(xpath="//a[@title='Home']")
+	public WebElement HomePage;
+
+
+	@FindBy(xpath="(//button[@type='button'])[14]")
+	public WebElement SignInPage;	
+
+
+	@FindBy(xpath="//input[@type='email']")
+	public WebElement EnterEmail;
+
+	@FindBy(xpath="//input[@type='password']")
+	public WebElement EnterPassword;
+
+
+	@FindBy(xpath="(//button[@type='submit'])[1]")
+	public WebElement ClickOnSignButton;
+
+
+	@FindBy(xpath="(//span[@class='profile-icon__circle'])[1]")
+	public WebElement profileIcon;
+
+	@FindBy(xpath="(//span[text()='My List'])[1]")
+	public WebElement MyListInProfileIcon;
+
+	//(//button[text()='Sign In'])[1]
+	@FindBy(xpath="(//button[text()='Sign In'])[1]")
+	public WebElement SignInButton;
+
+	//button[text()='Create one now']
+	@FindBy(xpath="//button[text()='Create one now']")
+	public WebElement CreateNewOne;
+
+
+	@FindBy(xpath="//input[@id='email']")
+	public WebElement Email;
+
+	@FindBy(xpath="//input[@id='password']")
+	public WebElement password;
+
+	@FindBy(xpath="//input[@id='confirmPassword']")
+	public WebElement confirmPassword;
+
+	@FindBy(xpath="//input[@id='firstName']")
+	public WebElement firstName;
+
+	@FindBy(xpath="//input[@id='lastName']")
+	public WebElement lastName;
+
+	@FindBy(xpath="(//button[@type='button'])[3]")
+	public WebElement gender;
+
+	//div[@class='date-of-birth-input__content']
+
+
+	@FindBy(xpath="//div[@class='date-of-birth-input__content']")
+	public WebElement DateOfBirth;
+
+	@FindBy(xpath="(//li[@class='select__item select__item--active select__item--item-position-left'])[1]")
+	public WebElement female;
+
+	@FindBy(xpath="(//li[@class='select__item select__item--active select__item--item-position-left'])[2]")
+	public WebElement male;
+
+	@FindBy(xpath="(//span[@class='checkbox__box'])[4]")
+	public WebElement checkbox;
+
+	@FindBy(xpath="//span[text()='Create Account']")
+	public WebElement CreateAccount;
+
+
+
+	@FindBy(xpath="//button[contains(text(),'No, I will do it later')]")
+	public WebElement LetsDoItNow;
+
+	@FindBy(xpath="//input[@name='day']")															
+	public WebElement Date;	
+
+	@FindBy(xpath="//input[@name='month']")															
+	public WebElement Month;
+
+	@FindBy(xpath="//input[@name='year']")															
+	public WebElement Year;	
+
+
+
 	public LoginPage(RemoteWebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}

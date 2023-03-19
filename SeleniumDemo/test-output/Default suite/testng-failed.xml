@@ -7,9 +7,10 @@
         <methods>
           <include name="killBrowser"/>
           <include name="killReport"/>
-          <include name="SearchValidation"/>
           <include name="intializationReportConfig"/>
           <include name="launchWeb"/>
+          <include name="startReport"/>
+          <include name="CompleateRefistration"/>
         </methods>
       </class> <!-- com.actitime.test1.Mewatch -->
     </classes>

@@ -9,7 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.actiTime.pages.LoginPage;
 
 public class EventUtils  {
 
@@ -35,7 +38,7 @@ public class EventUtils  {
 		driver.get(url);
 	}
 	public String getData(String value) throws Exception {
-		FileInputStream fs =new FileInputStream("C:\\Users\\SANJIT PRASAD GORAI\\eclipse-workspace\\SeleniumDemo\\credential.properties");
+		FileInputStream fs =new FileInputStream("C:\\Users\\SANJIT PRASAD GORAI\\git\\repository3\\SeleniumDemo\\credential.properties");
 		Properties p = new Properties();
 		p.load(fs);
 		return p.getProperty(value);
@@ -51,12 +54,24 @@ public class EventUtils  {
 		}
 	}
 	
-	public void scrollTo(int num) {
-		driver.executeScript("window.scrollBy(0,"+num+")");
+	public void scrollToElement(int num) {
+		driver.executeScript("window.scrollBy(0,500)");
 	}
 	
 	public void mouseHover(WebElement ele) {
 		Actions action = new Actions(driver);
 		action.moveToElement(ele).perform();
+	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();
+	}
+	
+	
+	public void handleDropDown(String gender) {
+		Select s =new Select(null);
+		s.selectByIndex(0);
+		s.selectByValue(gender);
+		s.selectByVisibleText(gender);
 	}
 }
