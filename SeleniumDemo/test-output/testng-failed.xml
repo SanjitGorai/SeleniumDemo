@@ -10,7 +10,7 @@
           <include name="intializationReportConfig"/>
           <include name="launchWeb"/>
           <include name="startReport"/>
-          <include name="CompleateRefistration"/>
+          <include name="CompleteRegistration"/>
         </methods>
       </class> <!-- com.actitime.test1.Mewatch -->
     </classes>

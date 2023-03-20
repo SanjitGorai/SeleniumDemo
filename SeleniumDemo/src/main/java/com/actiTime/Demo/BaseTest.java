@@ -45,12 +45,13 @@ public class BaseTest extends ReportUtils{
 			driver = new EdgeDriver();
 		}
 		else {
-			WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().setup();;
 			driver = new FirefoxDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
 
 	}	
 

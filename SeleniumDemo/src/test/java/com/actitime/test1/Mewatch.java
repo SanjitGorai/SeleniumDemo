@@ -87,6 +87,7 @@ public class Mewatch extends BaseTest {
 
 			loginPage = new LoginPage(driver);
 			eventUtils = new EventUtils(driver);
+
 			eventUtils.navigateToUrl(WebConstants.meWatch);
 			if(eventUtils.waitUntillElementIsPresent(loginPage.meWatchSkip, 30)) {
 				eventUtils.clickOnElement(loginPage.meWatchSkip);
@@ -94,6 +95,8 @@ public class Mewatch extends BaseTest {
 			eventUtils.clickOnElement(loginPage.SignInButton);
 			eventUtils.clickOnElement(loginPage.CreateNewOne);
 			String myEmail = eventUtils.getData("myEmail");
+			String randomEmail = myEmail.replace("gmail",eventUtils.random());
+			System.out.println(randomEmail);
 			String mypassword = eventUtils.getData("myPassword");
 			String confirmpassword = eventUtils.getData("confirmPassword");
 			String firstName = eventUtils.getData("firstName");
@@ -102,13 +105,15 @@ public class Mewatch extends BaseTest {
 			String month = eventUtils.getData("Month");
 			String year = eventUtils.getData("Year");
 
-			eventUtils.sendValue(loginPage.Email, myEmail);
+			eventUtils.sendValue(loginPage.Email, randomEmail );
 			eventUtils.sendValue(loginPage.password, mypassword);
 			eventUtils.sendValue(loginPage.confirmPassword, confirmpassword);
 			eventUtils.sendValue(loginPage.firstName, firstName);
 			eventUtils.sendValue(loginPage.lastName, lastName);
 			eventUtils.clickOnElement(loginPage.gender);
-			eventUtils.clickOnElement(loginPage.male);
+
+			eventUtils.handleDropDown("female");
+			//eventUtils.clickOnElement(loginPage.male);
 			eventUtils.sendValue(loginPage.Date, Date);	
 			eventUtils.sendValue(loginPage.Month, month);	
 			eventUtils.sendValue(loginPage.Year, year);
@@ -117,7 +122,7 @@ public class Mewatch extends BaseTest {
 			if(eventUtils.waitUntillElementIsPresent(loginPage.LetsDoItNow, 40)) {
 				eventUtils.clickOnElement(loginPage.LetsDoItNow);
 			}
-			
+
 			if(eventUtils.waitUntillElementIsPresent(loginPage.SignInButton, 20)) {
 				logStatus("PASS", "TC_003 user successfully landed to the home page");
 
@@ -127,7 +132,7 @@ public class Mewatch extends BaseTest {
 
 			}	}catch (Exception e) {
 				System.out.println(e.getMessage());
-
+				logStatus("FAIL", e.getMessage());
 			}
 
 	}

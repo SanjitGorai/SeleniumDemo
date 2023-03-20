@@ -3,6 +3,7 @@ package com.actiTime.Demo;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -68,10 +69,20 @@ public class EventUtils  {
 	}
 	
 	
+	public String random() {
+	Random random= new Random();
+     int randomnumber =  random.nextInt(100);
+     return String.valueOf(randomnumber);
+		
+	}
+	
+	
 	public void handleDropDown(String gender) {
-		Select s =new Select(null);
-		s.selectByIndex(0);
-		s.selectByValue(gender);
-		s.selectByVisibleText(gender);
+		LoginPage loginPage=new LoginPage(driver);
+		if(gender.equalsIgnoreCase("male")) {
+			clickOnElement(loginPage.male);
+		}else {
+			clickOnElement(loginPage.female);
+		}
 	}
 }
