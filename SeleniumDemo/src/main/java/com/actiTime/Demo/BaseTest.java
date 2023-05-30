@@ -44,10 +44,13 @@ public class BaseTest extends ReportUtils{
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-		else {
-			WebDriverManager.firefoxdriver().setup();;
+		else if(WebConstants.browser.contains("firefox")){
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
+		else {
+	        throw new IllegalArgumentException("Invalid browser type: " + WebConstants.browser);
+	    }
 
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.manage().window().maximize();

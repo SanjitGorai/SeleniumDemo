@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -55,8 +56,23 @@ public class EventUtils  {
 		}
 	}
 	
-	public void scrollToElement(int num) {
-		driver.executeScript("window.scrollBy(0,500)");
+	public void scrollToElement(WebElement ele,int num,int count) {
+		EventUtils eventUtils= new EventUtils(driver);
+		int scroll=0;
+		while(scroll<count) {
+		if(eventUtils.waitUntillElementIsPresent(ele, 10)) {
+			break;
+		}else {
+			driver.executeScript("window.scrollBy(0,"+num+")");
+			try {
+				Thread.sleep(50000);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			scroll++;
+		}
+		}
+		
 	}
 	
 	public void mouseHover(WebElement ele) {
@@ -84,5 +100,22 @@ public class EventUtils  {
 		}else {
 			clickOnElement(loginPage.female);
 		}
+	}
+	
+	public Set<String> getSessionID() {
+		Set<String> session=driver.getWindowHandles();
+		return session;
+	}
+	
+	public void windowHandle(String session) {
+		driver.switchTo().window(session);
+	}
+	
+	public String pageTitle() {
+		return driver.getTitle();
+	}
+	
+	public void closeWindow() {
+		driver.close();
 	}
 }
