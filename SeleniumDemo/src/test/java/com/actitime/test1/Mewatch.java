@@ -255,7 +255,6 @@ public class Mewatch extends BaseTest {
 		Set<String> session6 = eventUtils.getSessionID();
 		ArrayList<String> ar6 = new ArrayList<String>(session6);
 		eventUtils.windowHandle(ar6.get(0));
-
 		String actualTitle4 = eventUtils.pageTitle();
 		System.out.println(actualTitle4);
 		eventUtils.scrollToElement(loginPage.Subscription, 100, 25);
