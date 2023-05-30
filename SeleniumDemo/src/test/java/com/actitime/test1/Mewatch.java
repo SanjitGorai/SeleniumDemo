@@ -268,7 +268,7 @@ public class Mewatch extends BaseTest {
 		if (actualTitleSuscription.contains(SubscriptionTitle)) {
 			logStatus("PASS", "sucessfully get the title of Suscription" + actualTitleSuscription);
 		} else {
-			logStatus("FAIL", "sucessfully get the title of Suscription " + actualTitleSuscription);
+			logStatus("FAIL","sucessfully get the title of Suscription " + actualTitleSuscription);
 		}
 
 	}
