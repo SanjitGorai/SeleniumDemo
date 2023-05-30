@@ -231,6 +231,7 @@ public class Mewatch extends BaseTest {
 		}
 		Thread.sleep(5000);
 		eventUtils.closeWindow();
+		//handling window
 		Set<String> session4 = eventUtils.getSessionID();
 		ArrayList<String> ar4 = new ArrayList<String>(session4);
 		eventUtils.windowHandle(ar4.get(0));
