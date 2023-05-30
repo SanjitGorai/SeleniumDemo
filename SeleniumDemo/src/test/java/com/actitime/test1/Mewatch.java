@@ -270,6 +270,5 @@ public class Mewatch extends BaseTest {
 		} else {
 			logStatus("FAIL","sucessfully get the title of Suscription " + actualTitleSuscription);
 		}
-
 	}
 }
