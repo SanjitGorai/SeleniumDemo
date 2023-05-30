@@ -265,6 +265,7 @@ public class Mewatch extends BaseTest {
 		String actualTitleSuscription = eventUtils.pageTitle();
 		System.out.println(actualTitleSuscription);
 		if (actualTitleSuscription.contains(SubscriptionTitle)) {
+			
 			logStatus("PASS", "sucessfully get the title of Suscription" + actualTitleSuscription);
 		} else {
 			logStatus("FAIL","sucessfully get the title of Suscription " + actualTitleSuscription);
