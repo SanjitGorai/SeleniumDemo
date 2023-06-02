@@ -175,30 +175,41 @@ public class LoginPage extends BaseTest {
 
 	@FindBy(xpath = "//span[contains(text(),'Terms')]")
 	public WebElement terms;
-	
+
 	@FindBy(xpath = "//span[text()='Privacy Policy']")
 	public WebElement Privacy;
-	
+
 	@FindBy(xpath = "//span[text()='Advertise']")
 	public WebElement Advertise;
-	
+
 	@FindBy(xpath = "//span[text()='Help']")
 	public WebElement Help;
-	
+
 	@FindBy(xpath = "//span[text()='Subscription Plans']")
 	public WebElement Subscription;
-	
-	//Subscription Plans
-	//span[text()='Help']
-	//span[text()='Advertise']
-	
-	//span[text()='Privacy Policy']
+
+	@FindBy(xpath = "//a[text()='Live TV']")
+	public WebElement LiveTv;
+
+	@FindBy(xpath = "//div[@class='scrollable channel-carousel__scrollable']")
+	public WebElement suria;
+
+	@FindBy(xpath = "//button[@class='arrow arrow--right arrow--visible']")
+	public WebElement Rightarrowbutton;
 
 
 
+	@FindBy(xpath = "//div[@class='ed1-img__overlay']")
+	public WebElement TvGuide;
 
+	@FindBy(xpath = "(//span[text()='HBO Family'])[2]")
+	public WebElement HBOfamily;
 
+	@FindBy(xpath = "//div[@id='1f36da4']")
+	public WebElement blank;
 
+	@FindBy(xpath = "//div[@id='1f36da4']//div[text()='Wheel Of Fortune S39 - EP 7599']")
+	public WebElement WheelofFortune;
 
 	public LoginPage(RemoteWebDriver driver) {
 		PageFactory.initElements(driver, this);

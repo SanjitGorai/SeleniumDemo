@@ -20,11 +20,10 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void loginValidation() throws Exception{
 		try {
+				
+			//Sajit prasad gorai
 			
-			
-			
-			//Sajit
-			loginPage = new LoginPage(driver);	
+			loginPage = new LoginPage(driver)
 			eventUtils= new EventUtils(driver);
 			eventUtils.navigateToUrl(WebConstants.url);
 			logStatus("INFO", "user successfully navigate to particular url");

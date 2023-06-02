@@ -77,7 +77,11 @@ public class EventUtils  {
 	
 	public void mouseHover(WebElement ele) {
 		Actions action = new Actions(driver);
-		action.moveToElement(ele).perform();
+		try {
+			action.moveToElement(ele).perform();
+		} catch (Exception e) {
+			action.moveToElement(ele).perform();
+		}
 	}
 	
 	public void refreshPage() {
@@ -117,5 +121,9 @@ public class EventUtils  {
 	
 	public void closeWindow() {
 		driver.close();
+	}
+	
+	public void refresh(){
+		driver.navigate().refresh();
 	}
 }

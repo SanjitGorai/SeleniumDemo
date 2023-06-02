@@ -9,6 +9,7 @@ import com.actiTime.Demo.BaseTest;
 import com.actiTime.Demo.EventUtils;
 import com.actiTime.Demo.WebConstants;
 import com.actiTime.pages.LoginPage;
+import com.aventstack.extentreports.model.Log;
 
 public class Mewatch extends BaseTest {
 
@@ -231,7 +232,7 @@ public class Mewatch extends BaseTest {
 		}
 		Thread.sleep(5000);
 		eventUtils.closeWindow();
-		//handling window
+		// handling window
 		Set<String> session4 = eventUtils.getSessionID();
 		ArrayList<String> ar4 = new ArrayList<String>(session4);
 		eventUtils.windowHandle(ar4.get(0));
@@ -266,10 +267,82 @@ public class Mewatch extends BaseTest {
 		String actualTitleSuscription = eventUtils.pageTitle();
 		System.out.println(actualTitleSuscription);
 		if (actualTitleSuscription.contains(SubscriptionTitle)) {
-			
+
 			logStatus("PASS", "sucessfully get the title of Suscription" + actualTitleSuscription);
 		} else {
-			logStatus("FAIL","sucessfully get the title of Suscription " + actualTitleSuscription);
+			logStatus("FAIL", "sucessfully get the title of Suscription " + actualTitleSuscription);
 		}
 	}
+
+	@Test
+	public void ValidateLiveTv() throws Exception {
+
+		loginPage = new LoginPage(driver);
+		eventUtils = new EventUtils(driver);
+
+		eventUtils.navigateToUrl(WebConstants.meWatch);
+		if (eventUtils.waitUntillElementIsPresent(loginPage.meWatchSkip, 30)) {
+			eventUtils.clickOnElement(loginPage.meWatchSkip);
+		}
+		eventUtils.clickOnElement(loginPage.LiveTv);
+		eventUtils.clickOnElement(loginPage.TvGuide);
+		eventUtils.clickOnElement(loginPage.GotItButton);
+		int scroll=0;
+		while(scroll<8) {
+		if (eventUtils.waitUntillElementIsPresent(loginPage.suria, 40)) {
+			try {
+				eventUtils.mouseHover(loginPage.suria);
+				break;
+			} catch (Exception e) {
+				eventUtils.refresh();
+				scroll++;
+			}
+		}else {
+			eventUtils.refresh();
+			scroll++;
+		}
+		}
+		eventUtils.clickOnElement(loginPage.Rightarrowbutton);
+		int click = 0;
+		boolean count=false;
+		while (click < 10) {
+			if (eventUtils.waitUntillElementIsPresent(loginPage.HBOfamily, 2)) {
+				count=true;
+				break;
+			} else {
+				eventUtils.clickOnElement(loginPage.Rightarrowbutton);
+				click++;
+			}
+
+		}
+		if(count) {
+			logStatus("PASS", "user navigate to HBO channel");
+		}
+		else {
+			logStatus("FAIL", "user navigate to HBO channel");
+		}
+	}	
+	
+	
+	@Test
+	public void ValidateBlankPage() throws Exception {
+
+		loginPage = new LoginPage(driver);
+		eventUtils = new EventUtils(driver);
+
+		eventUtils.navigateToUrl(WebConstants.meWatch);
+		if (eventUtils.waitUntillElementIsPresent(loginPage.meWatchSkip, 30)) {
+			eventUtils.clickOnElement(loginPage.meWatchSkip);
+		}
+		eventUtils.clickOnElement(loginPage.LiveTv);
+		eventUtils.clickOnElement(loginPage.TvGuide);
+		eventUtils.clickOnElement(loginPage.GotItButton);
+		if (eventUtils.waitUntillElementIsPresent(loginPage.WheelofFortune, 30)) {
+			eventUtils.clickOnElement(loginPage.WheelofFortune);
+			logStatus("PASS", "user  navigate WheelofFortune  channel");
+		}else {
+			logStatus("FAIL", "user not navigate WheelofFortune  channel");
+			
+		}
+}
 }

@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.actitime.test1.LoginTest"/>
+      <class name="com.actitime.test1.Mewatch"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
