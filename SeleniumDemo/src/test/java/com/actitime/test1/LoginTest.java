@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
 	public void loginValidation() throws Exception{
 		try {
 				
-			//Sajit
+			//Sajit prasad gorai
 			
 			loginPage = new LoginPage(driver);
 			eventUtils= new EventUtils(driver);
