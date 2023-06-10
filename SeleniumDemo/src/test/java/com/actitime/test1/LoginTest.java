@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
 				
 			//Sajit prasad gorai
 			
-			loginPage = new LoginPage(driver)
+			loginPage = new LoginPage(driver);
 			eventUtils= new EventUtils(driver);
 			eventUtils.navigateToUrl(WebConstants.url);
 			logStatus("INFO", "user successfully navigate to particular url");
