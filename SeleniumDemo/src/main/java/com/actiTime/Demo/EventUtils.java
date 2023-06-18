@@ -40,7 +40,7 @@ public class EventUtils  {
 		driver.get(url);
 	}
 	public String getData(String value) throws Exception {
-		FileInputStream fs =new FileInputStream("C:\\Users\\SANJIT PRASAD GORAI\\git\\repository3\\SeleniumDemo\\credential.properties");
+		FileInputStream fs =new FileInputStream("D:\\SeleniumDemo\\SeleniumDemo\\credential.properties");
 		Properties p = new Properties();
 		p.load(fs);
 		return p.getProperty(value);

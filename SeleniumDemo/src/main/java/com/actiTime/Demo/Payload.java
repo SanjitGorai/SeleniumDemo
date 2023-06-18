@@ -1,6 +1,6 @@
 package com.actiTime.Demo;
 
-
+import io.restassured.path.json.JsonPath;
 
 public class Payload{
 	
@@ -25,6 +25,10 @@ public static String Addplace () {
 			+ "";
 	
 	}
+  public static JsonPath rowJson(String response) {
+	  JsonPath js1=new JsonPath(response);
+	  return js1;
+  }
 	
 }
 

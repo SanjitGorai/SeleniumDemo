@@ -2,32 +2,32 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-02T19:32:19 IST" name="Default suite" finished-at="2023-06-02T19:43:02 IST" duration-ms="642515">
+  <suite started-at="2023-06-17T23:31:59 IST" name="Default suite" finished-at="2023-06-17T23:33:42 IST" duration-ms="103066">
     <groups>
     </groups>
-    <test started-at="2023-06-02T19:32:19 IST" name="Default test" finished-at="2023-06-02T19:43:02 IST" duration-ms="642515">
+    <test started-at="2023-06-17T23:31:59 IST" name="Default test" finished-at="2023-06-17T23:33:42 IST" duration-ms="103066">
       <class name="com.actitime.test1.LoginTest">
-        <test-method is-config="true" signature="intializationReportConfig()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:32:18 IST" name="intializationReportConfig" finished-at="2023-06-02T19:32:19 IST" duration-ms="1106" status="PASS">
+        <test-method is-config="true" signature="intializationReportConfig()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:31:58 IST" name="intializationReportConfig" finished-at="2023-06-17T23:31:59 IST" duration-ms="1035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializationReportConfig -->
-        <test-method is-config="true" signature="startReport()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:32:20 IST" name="startReport" finished-at="2023-06-02T19:32:20 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:31:59 IST" name="startReport" finished-at="2023-06-17T23:31:59 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method is-config="true" signature="launchWeb()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:32:20 IST" name="launchWeb" finished-at="2023-06-02T19:32:22 IST" duration-ms="2760" status="PASS">
+        <test-method is-config="true" signature="launchWeb()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:31:59 IST" name="launchWeb" finished-at="2023-06-17T23:32:02 IST" duration-ms="2800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWeb -->
-        <test-method signature="loginValidation()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:32:22 IST" name="loginValidation" finished-at="2023-06-02T19:43:01 IST" duration-ms="639158" status="PASS">
+        <test-method signature="SearchValidation()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:32:02 IST" name="SearchValidation" finished-at="2023-06-17T23:33:41 IST" duration-ms="99184" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginValidation -->
-        <test-method is-config="true" signature="killBrowser()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:43:02 IST" name="killBrowser" finished-at="2023-06-02T19:43:02 IST" duration-ms="461" status="PASS">
+        </test-method> <!-- SearchValidation -->
+        <test-method is-config="true" signature="killBrowser()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:33:41 IST" name="killBrowser" finished-at="2023-06-17T23:33:42 IST" duration-ms="1009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killBrowser -->
-        <test-method is-config="true" signature="killReport()[pri:0, instance:com.actitime.test1.LoginTest@6e0f5f7f]" started-at="2023-06-02T19:43:02 IST" name="killReport" finished-at="2023-06-02T19:43:02 IST" duration-ms="108" status="PASS">
+        <test-method is-config="true" signature="killReport()[pri:0, instance:com.actitime.test1.LoginTest@659499f1]" started-at="2023-06-17T23:33:42 IST" name="killReport" finished-at="2023-06-17T23:33:42 IST" duration-ms="67" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killReport -->
