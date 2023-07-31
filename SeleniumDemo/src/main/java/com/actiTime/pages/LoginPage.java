@@ -210,6 +210,68 @@ public class LoginPage extends BaseTest {
 
 	@FindBy(xpath = "//div[@id='1f36da4']//div[text()='Wheel Of Fortune S39 - EP 7599']")
 	public WebElement WheelofFortune;
+	
+	@FindBy(name  = "username")
+	public WebElement OrangeUsername;
+	
+	@FindBy(name  = "password")
+	public WebElement OrangePwd;
+	
+	@FindBy(xpath = "//button[@type='submit']")
+	public WebElement ClickOnSumbitHRM;
+	
+	@FindBy(xpath = "//p[@class='oxd-userdropdown-name']")
+	public WebElement PreUser;
+	
+	@FindBy(xpath = "(//li[@class='oxd-main-menu-item-wrapper'])[1]")
+	public WebElement ClickonAdmin;
+	
+	@FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
+	public WebElement ClickonAdd;
+	
+	@FindBy(xpath = "(//div[text()='-- Select --'])[1]")
+	public WebElement ClickonUserRole;
+	
+	@FindBy(xpath = "(//span[text()='Admin'])[2]")
+	public WebElement ClickonStutas;
+	
+	@FindBy(xpath = "//input[@placeholder='Type for hints...']")
+	public WebElement EnterEmpName;
+	
+	@FindBy(xpath = "//div[@class='oxd-autocomplete-dropdown --positon-bottom']")
+	public WebElement EnterEmpNameHidden;
+	
+	@FindBy(xpath = "(//div[@class='oxd-select-text-input'])[2]")
+	public WebElement ClickonStutas2;
+	
+	@FindBy(xpath = "//span[text()='Enabled']")
+	public WebElement ClickonEnaled;
+	
+	@FindBy(xpath = "//label[text()='Username']/../..//input[@class='oxd-input oxd-input--active']")
+	public WebElement TypeuserName;
+	
+	@FindBy(xpath = "//label[text()='Password']/../..//input[@class='oxd-input oxd-input--active']")
+	public WebElement TypePwd;
+	
+	@FindBy(xpath = "//button[text()=' Save ']")
+	public WebElement ClickOnSave;
+	
+	
+	@FindBy(xpath = "//label[text()='Confirm Password']/../..//input[@class='oxd-input oxd-input--active']")
+	public WebElement TypeConfirmPwd;
+	
+	@FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
+	public WebElement SearceUserName;
+	
+	@FindBy(xpath = "//button[text()=' Search ']")
+	public WebElement ClickOnSearchUserName;
+	
+	@FindBy(xpath = "(//div[@class='oxd-table-cell oxd-padding-cell'])[2]")
+	public WebElement ActualUserName;
+	
+	
+	
+	
 
 	public LoginPage(RemoteWebDriver driver) {
 		PageFactory.initElements(driver, this);

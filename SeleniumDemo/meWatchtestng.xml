@@ -3,7 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.actitime.test1.Mewatch"/>
+      <class name="com.actitime.test1.Mewatch">
+     <methods>
+   <include name="ValidateTitle()"></include>
+</methods>
+</class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

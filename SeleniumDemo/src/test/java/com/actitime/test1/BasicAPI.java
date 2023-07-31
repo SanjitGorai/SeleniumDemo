@@ -13,7 +13,7 @@ import com.actiTime.Demo.Payload;
 public class BasicAPI {
 	public static void main(String[] args) {
 		RestAssured.baseURI="https://rahulshettyacademy.com/";
-	String response=	given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json")
+	String response=RestAssured.given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json")
 		.body(Payload.Addplace()).when().post("maps/api/place/add/json")
 		.then()
 		.extract().response().asString();
@@ -47,9 +47,6 @@ public class BasicAPI {
 	String actualAdderss= js1.get("address");
 	System.out.println(actualAdderss);
 	 
-	
-	 
-	
 	}
 	
 }

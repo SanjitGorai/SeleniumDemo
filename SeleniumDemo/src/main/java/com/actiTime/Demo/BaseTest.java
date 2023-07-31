@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.GeckoDriverService;
@@ -38,6 +39,8 @@ public class BaseTest extends ReportUtils{
 	public void launchWeb() {
 		if(WebConstants.browser.contains("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			ChromeOptions optiom=new ChromeOptions();
+			optiom.addArguments("--headless");
 			driver = new ChromeDriver();	
 		}
 		else if(WebConstants.browser.contains("edge")) {

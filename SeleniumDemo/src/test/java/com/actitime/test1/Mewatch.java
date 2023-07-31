@@ -136,7 +136,7 @@ public class Mewatch extends BaseTest {
 		}
 
 	}
-
+ 
 	@Test
 	public void ValidateTitle() throws Exception {
 		loginPage = new LoginPage(driver);
@@ -289,18 +289,18 @@ public class Mewatch extends BaseTest {
 		eventUtils.clickOnElement(loginPage.GotItButton);
 		int scroll=0;
 		while(scroll<8) {
-		if (eventUtils.waitUntillElementIsPresent(loginPage.suria, 40)) {
-			try {
-				eventUtils.mouseHover(loginPage.suria);
-				break;
-			} catch (Exception e) {
+			if (eventUtils.waitUntillElementIsPresent(loginPage.suria, 40)) {
+				try {
+					eventUtils.mouseHover(loginPage.suria);
+					break;
+				} catch (Exception e) {
+					eventUtils.refresh();
+					scroll++;
+				}
+			}else {
 				eventUtils.refresh();
 				scroll++;
 			}
-		}else {
-			eventUtils.refresh();
-			scroll++;
-		}
 		}
 		eventUtils.clickOnElement(loginPage.Rightarrowbutton);
 		int click = 0;
@@ -322,8 +322,8 @@ public class Mewatch extends BaseTest {
 			logStatus("FAIL", "user navigate to HBO channel");
 		}
 	}	
-	
-	
+
+
 	@Test
 	public void ValidateBlankPage() throws Exception {
 
@@ -342,7 +342,7 @@ public class Mewatch extends BaseTest {
 			logStatus("PASS", "user  navigate WheelofFortune  channel");
 		}else {
 			logStatus("FAIL", "user not navigate WheelofFortune  channel");
-			
+
 		}
-}
+	}
 }

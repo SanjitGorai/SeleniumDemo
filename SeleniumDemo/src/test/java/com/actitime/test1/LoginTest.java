@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
 			eventUtils.navigateToUrl(WebConstants.url);
 			logStatus("INFO", "user successfully navigate to particular url");
 			String user = eventUtils.getData("username");
-			String pwd = eventUtils.getData("password");
+			String pwd = eventUtils.getData("password"); 
 			eventUtils.sendValue(loginPage.user,user);
 			eventUtils.sendValue(loginPage.pwd, pwd);
 			Thread.sleep(2000);

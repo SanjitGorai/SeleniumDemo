@@ -91,7 +91,7 @@ public class EventUtils  {
 	
 	public String random() {
 	Random random= new Random();
-     int randomnumber =  random.nextInt(100);
+     int randomnumber =  random.nextInt(10000);
      return String.valueOf(randomnumber);
 		
 	}
@@ -117,6 +117,10 @@ public class EventUtils  {
 	
 	public String pageTitle() {
 		return driver.getTitle();
+	}
+	
+	public String text(WebElement ele) {
+		return ele.getText(); 
 	}
 	
 	public void closeWindow() {
