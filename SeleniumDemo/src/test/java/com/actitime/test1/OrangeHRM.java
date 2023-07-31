@@ -37,7 +37,6 @@ public class OrangeHRM extends BaseTest {
 					eventUtils.clickOnElement(loginPage.EnterEmpNameHidden);
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			eventUtils.clickOnElement(loginPage.ClickonStutas2);
@@ -65,7 +64,6 @@ public class OrangeHRM extends BaseTest {
 				logStatus("FAIL", "User Name is not finding Successfully");
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 				

@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-31T14:03:33 IST" name="Default suite" finished-at="2023-07-31T14:04:06 IST" duration-ms="33287">
+  <suite started-at="2023-07-31T21:18:10 IST" name="Default suite" finished-at="2023-07-31T21:18:48 IST" duration-ms="37884">
     <groups>
     </groups>
-    <test started-at="2023-07-31T14:03:33 IST" name="Default test" finished-at="2023-07-31T14:04:06 IST" duration-ms="33287">
+    <test started-at="2023-07-31T21:18:10 IST" name="Default test" finished-at="2023-07-31T21:18:48 IST" duration-ms="37884">
       <class name="com.actitime.test1.OrangeHRM">
-        <test-method is-config="true" signature="intializationReportConfig()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:03:32 IST" name="intializationReportConfig" finished-at="2023-07-31T14:03:33 IST" duration-ms="1084" status="PASS">
+        <test-method is-config="true" signature="intializationReportConfig()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:09 IST" name="intializationReportConfig" finished-at="2023-07-31T21:18:10 IST" duration-ms="1009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializationReportConfig -->
-        <test-method is-config="true" signature="startReport()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:03:33 IST" name="startReport" finished-at="2023-07-31T14:03:33 IST" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:10 IST" name="startReport" finished-at="2023-07-31T21:18:10 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method is-config="true" signature="launchWeb()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:03:33 IST" name="launchWeb" finished-at="2023-07-31T14:03:41 IST" duration-ms="7937" status="PASS">
+        <test-method is-config="true" signature="launchWeb()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:10 IST" name="launchWeb" finished-at="2023-07-31T21:18:22 IST" duration-ms="11733" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWeb -->
-        <test-method signature="UserNameValidationValidation()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:03:41 IST" name="UserNameValidationValidation" finished-at="2023-07-31T14:04:06 IST" duration-ms="24715" status="PASS">
+        <test-method signature="UserNameValidationValidation()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:22 IST" name="UserNameValidationValidation" finished-at="2023-07-31T21:18:47 IST" duration-ms="25661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserNameValidationValidation -->
-        <test-method is-config="true" signature="killBrowser()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:04:06 IST" name="killBrowser" finished-at="2023-07-31T14:04:06 IST" duration-ms="565" status="PASS">
+        <test-method is-config="true" signature="killBrowser()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:47 IST" name="killBrowser" finished-at="2023-07-31T21:18:48 IST" duration-ms="409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killBrowser -->
-        <test-method is-config="true" signature="killReport()[pri:0, instance:com.actitime.test1.OrangeHRM@82de64a]" started-at="2023-07-31T14:04:06 IST" name="killReport" finished-at="2023-07-31T14:04:06 IST" duration-ms="112" status="PASS">
+        <test-method is-config="true" signature="killReport()[pri:0, instance:com.actitime.test1.OrangeHRM@12aba8be]" started-at="2023-07-31T21:18:48 IST" name="killReport" finished-at="2023-07-31T21:18:48 IST" duration-ms="118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killReport -->
