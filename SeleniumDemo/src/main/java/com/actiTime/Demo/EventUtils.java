@@ -6,6 +6,9 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -130,4 +133,13 @@ public class EventUtils  {
 	public void refresh(){
 		driver.navigate().refresh();
 	}
-}
+		public String getDataFromexcel(int i,int j)throws Exception {
+			DataFormatter data=new DataFormatter();
+			FileInputStream fis=new FileInputStream("D:\\SeleniumDemo\\SeleniumDemo\\Book1.xlsx");
+			XSSFWorkbook wb=new XSSFWorkbook(fis);
+			XSSFSheet sheetAt = wb.getSheetAt(0);			
+			String s = data.formatCellValue(sheetAt.getRow(i).getCell(j));
+			return s;
+		}
+	}
+
