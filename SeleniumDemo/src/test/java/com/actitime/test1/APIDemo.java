@@ -18,7 +18,7 @@ public class APIDemo {
 		
 //		 JsonPath js= new JsonPath(response.asString());
 //		String total= js.getString("data[2].last_name");
-//	//	int number = Integer.parseInt(total);
+//		int number = Integer.parseInt(total);
 //		char ch[]=total.toCharArray();
 //		System.out.println(ch);
 //		for(int i=0;i<total.length();i++) {
