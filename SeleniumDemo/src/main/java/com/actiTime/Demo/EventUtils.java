@@ -34,6 +34,10 @@ public class EventUtils  {
 		reportUtils=new ReportUtils();
 		ele.click();
 		reportUtils.logStatus("INFO", "user successfully click on particular element");
+		
+		
+		
+		
 	}
 	
 	public void sendValue(WebElement ele,String element) {
