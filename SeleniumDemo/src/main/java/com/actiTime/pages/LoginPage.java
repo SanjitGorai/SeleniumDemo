@@ -154,6 +154,9 @@ public class LoginPage extends BaseTest {
 
 	@FindBy(xpath = "(//input[@type='email'])[2]")
 	public WebElement entereMail1;
+	
+	
+	
 
 	@FindBy(xpath = "(//input[@type='password'])[2]")
 	public WebElement enterPassword1;
