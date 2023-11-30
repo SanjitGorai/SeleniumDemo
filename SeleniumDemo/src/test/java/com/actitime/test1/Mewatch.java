@@ -136,7 +136,7 @@ public class Mewatch extends BaseTest {
 		}
 
 	}
- 
+
 	@Test
 	public void ValidateTitle() throws Exception {
 		loginPage = new LoginPage(driver);
@@ -343,6 +343,38 @@ public class Mewatch extends BaseTest {
 		}else {
 			logStatus("FAIL", "user not navigate WheelofFortune  channel");
 
+		}
+	}
+
+
+	@Test
+	public void ValidateNotFoundEpisode() throws Exception {
+
+		loginPage = new LoginPage(driver);
+		eventUtils = new EventUtils(driver);
+		eventUtils.navigateToUrl(WebConstants.meWatch);
+		if (eventUtils.waitUntillElementIsPresent(loginPage.meWatchSkip, 30)) {
+			eventUtils.clickOnElement(loginPage.meWatchSkip);
+			String content = eventUtils.getData("seriesKin");
+			String episodeNumber=eventUtils.getData("episodenum");
+			eventUtils.clickOnElement(loginPage.SearchSeries);
+			eventUtils.sendValue(loginPage.SearchSeries, content);
+			eventUtils.clickOnElement(loginPage.SearchIconMewatch);
+			eventUtils.clickOnElement(loginPage.KinSeries);
+			eventUtils.scrollToElement(loginPage.OldestFirst, 900, 5);
+			eventUtils.clickOnElement(loginPage.OldestFirst);
+			eventUtils.clickOnElement(loginPage.NewestFirstdropdwon);
+			Thread.sleep(5000);
+			eventUtils.clickOnElement(loginPage.Allepisode);
+			eventUtils.clickOnElement(loginPage.JumpToEpisode);
+			eventUtils.sendValue(loginPage.InputEpisodeNumber, episodeNumber);
+			eventUtils.clickOnElement(loginPage.continueButton);
+			if (eventUtils.waitUntillElementIsPresent(loginPage.EpisodeNotFound, 10)) {
+				logStatus("PASS", "TC_003 user successfully showed the not Found Episode");
+
+			} else {
+				logStatus("PASS", "TC_003 user successfully did not showed the not Found Episode");
+			}	
 		}
 	}
 }

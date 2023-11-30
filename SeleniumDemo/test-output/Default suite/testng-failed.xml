@@ -6,11 +6,11 @@
       <class name="com.actitime.test1.Mewatch">
         <methods>
           <include name="killBrowser"/>
-          <include name="ValidateFooterTitle"/>
           <include name="killReport"/>
           <include name="intializationReportConfig"/>
           <include name="launchWeb"/>
           <include name="startReport"/>
+          <include name="ValidateNotFoundEpisode"/>
         </methods>
       </class> <!-- com.actitime.test1.Mewatch -->
     </classes>

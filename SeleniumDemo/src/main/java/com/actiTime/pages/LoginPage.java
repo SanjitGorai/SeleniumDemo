@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.actiTime.Demo.BaseTest;
 
+import java.util.*;
+
 public class LoginPage extends BaseTest {
 
 	@FindBy(xpath = "//input[@id='username']")
@@ -269,7 +271,32 @@ public class LoginPage extends BaseTest {
 	@FindBy(xpath = "(//div[@class='oxd-table-cell oxd-padding-cell'])[2]")
 	public WebElement ActualUserName;
 	
+	@FindBy(xpath = "//div[text()='Kin']")
+	public WebElement KinSeries;
 	
+	
+	@FindBy(xpath = "//div[@class='select select--drop-down select--default select select--sort']")
+	public WebElement OldestFirst;
+	
+	@FindBy(xpath = "//span[text()='Newest First']")
+	public WebElement NewestFirstdropdwon;
+	
+	
+	
+	@FindBy(xpath = "//div[@class='select select--drop-down select--extendable select--default select select--episode']")
+	public WebElement Allepisode;
+	
+	@FindBy(xpath = "//span[text()='Jump to Episode']")
+	public WebElement JumpToEpisode;
+	
+	@FindBy(xpath = "//input[@id='episode-number']")
+	public WebElement InputEpisodeNumber;
+	
+	@FindBy(xpath = "//button[@class='cta-btn cta-btn--dark cta-btn--primary cta-btn--primary-dark jump-to-episode__button truncate']")
+	public WebElement continueButton;
+	
+	@FindBy(xpath = "//p[text()='Episode not found']")
+	public WebElement EpisodeNotFound;
 	
 	
 
