@@ -1,8 +1,10 @@
 package com.actitime.test1;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.actiTime.Demo.BaseTest;
@@ -10,6 +12,8 @@ import com.actiTime.Demo.EventUtils;
 import com.actiTime.Demo.WebConstants;
 import com.actiTime.pages.LoginPage;
 import com.aventstack.extentreports.model.Log;
+
+import lombok.AllArgsConstructor;
 
 public class Mewatch extends BaseTest {
 
@@ -376,5 +380,94 @@ public class Mewatch extends BaseTest {
 				logStatus("PASS", "TC_003 user successfully did not showed the not Found Episode");
 			}	
 		}
+
+	}	
+	@Test
+	public void ValidateAllFeatured() throws Exception {
+
+		loginPage = new LoginPage(driver);
+		eventUtils = new EventUtils(driver);
+
+		eventUtils.navigateToUrl(WebConstants.meWatch);
+		if (eventUtils.waitUntillElementIsPresent(loginPage.meWatchSkip, 30)) {
+			eventUtils.clickOnElement(loginPage.meWatchSkip);
+			eventUtils.clickOnElement(loginPage.featured);
+			eventUtils.clickOnElement(loginPage.AllAudio);
+			List<WebElement> abc = loginPage.AllAudioselected;			
+			for (int i = 0; i < abc.size(); i++) {
+				String text = abc.get(i).getText();
+				logStatus("INFO", "Elements are ----> "+text);
+				
+			}
+			//Thread.sleep(20000);
+			for (int i = 0; i < abc.size(); i++) {
+				String text = abc.get(i).getText();
+				if (text.equalsIgnoreCase("English")) {
+					eventUtils.clickOnElement(abc.get(i));						
+					
+				}
+			}
+			
+			if(eventUtils.waitUntillElementIsPresent(loginPage.English, 10)) {
+				logStatus("PASS", "TC_004 user successfully navigate to English");
+			}else {
+				logStatus("FAIL", "TC_004 user successfully not navigate to English");
+			}
+				
+			eventUtils.clickOnElement(loginPage.AllRating);
+			List<WebElement> AllRating = loginPage.AllRatingselected;
+			for (int i = 0; i < AllRating.size(); i++) {
+				String text1 = AllRating.get(i).getText();
+				logStatus("INFO", "Element are ---> "+text1);
+				
+			}
+			for (int i = 0; i < AllRating.size(); i++) {
+				String text1 = AllRating.get(i).getText();
+				if (text1.equalsIgnoreCase("G Only")) {
+					eventUtils.clickOnElement(AllRating.get(i));
+				}
+			}
+			if (eventUtils.waitUntillElementIsPresent(loginPage.Gonly, 10)) {
+				logStatus("PASS", "TC_005 user successfully navigate to G Only");
+			}else {
+				logStatus("FAIL", "TC_005 user successfully not navigate to G only");
+			}
+
+			eventUtils.clickOnElement(loginPage.NewestFirst);
+			List<WebElement> NewFirst = loginPage.AllNewestFirst;
+			for (int i = 0; i <NewFirst.size(); i++) {
+				String text2 = NewFirst.get(i).getText();
+				logStatus("INFO", "Element are----> "+text2);
+			}
+			for (int i = 0; i < NewFirst.size(); i++) {
+				String text2 = NewFirst.get(i).getText();
+				if(text2.equalsIgnoreCase("Oldest First")) {
+					eventUtils.clickOnElement(NewFirst.get(i));
+				}			
+			}
+			if (eventUtils.waitUntillElementIsPresent(loginPage.OldestFirstText, 10)) {
+				logStatus("PASS", "TC_006 user successfully navigate to OldestFirst");
+			}else {
+				logStatus("FAIL", "TC_006 user successfully not navigate to OldestFirst");
+			}			
+		}
+		eventUtils.clickOnElement(loginPage.AllGeneres);
+		List<WebElement> AllGen = loginPage.AllGeneresList;
+		for(int i=0;i<AllGen.size();i++) {
+			String text3 = AllGen.get(i).getText();
+			logStatus("INFO", "Element are ---->"+text3);	
+		}
+		for(int i=0;i<AllGen.size();i++) {
+			String text3 = AllGen.get(i).getText();
+			if(text3.equalsIgnoreCase("Drama")) {
+				eventUtils.clickOnElement(AllGen.get(i));
+			}
+		}
+		if (eventUtils.waitUntillElementIsPresent(loginPage.Drama, 10)) {
+			logStatus("PASS", "TC_006 user successfully navigate to Drama");
+		}else {
+			logStatus("FAIL", "TC_006 user successfully not navigate to DramaS");
+		}	
 	}
 }
+

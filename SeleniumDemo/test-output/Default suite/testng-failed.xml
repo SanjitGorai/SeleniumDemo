@@ -7,10 +7,10 @@
         <methods>
           <include name="killBrowser"/>
           <include name="killReport"/>
+          <include name="ValidateAllFeatured"/>
           <include name="intializationReportConfig"/>
           <include name="launchWeb"/>
           <include name="startReport"/>
-          <include name="ValidateNotFoundEpisode"/>
         </methods>
       </class> <!-- com.actitime.test1.Mewatch -->
     </classes>

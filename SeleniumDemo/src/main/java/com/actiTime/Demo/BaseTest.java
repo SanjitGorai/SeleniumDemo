@@ -70,7 +70,6 @@ public class BaseTest extends ReportUtils{
 	public void killReport() {
 		report.flush();
 
-//Sanjit prasad gorai
 	}
 
 }

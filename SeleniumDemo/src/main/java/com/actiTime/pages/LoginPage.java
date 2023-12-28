@@ -154,9 +154,6 @@ public class LoginPage extends BaseTest {
 
 	@FindBy(xpath = "(//input[@type='email'])[2]")
 	public WebElement entereMail1;
-	
-	
-	
 
 	@FindBy(xpath = "(//input[@type='password'])[2]")
 	public WebElement enterPassword1;
@@ -300,6 +297,48 @@ public class LoginPage extends BaseTest {
 	
 	@FindBy(xpath = "//p[text()='Episode not found']")
 	public WebElement EpisodeNotFound;
+	
+	@FindBy(xpath = "//a[@aria-label='/featured']")
+	public WebElement featured;
+	
+	@FindBy(xpath = "(//div[@class='drop-select__options drop-select__options--alignment-left'])[1]")
+	public WebElement AllAudio;
+	
+	@FindBy(xpath = "(//div[@role='listbox'])[1]//label")
+	public List <WebElement> AllAudioselected;
+	
+	@FindBy(xpath = "(//label[text()='English'])[1]")
+	public WebElement English;
+	
+	@FindBy(xpath = "(//div[@class='drop-select__current-option'])[2]")
+	public WebElement AllRating;
+	
+	@FindBy(xpath = "(//div[@role='listbox'])[2]//label")
+	public List <WebElement> AllRatingselected;
+	
+	@FindBy(xpath = "(//label[text()='G Only'])[1]")
+	public WebElement Gonly;
+	
+	@FindBy(xpath = "(//div[@class='drop-select__options drop-select__options--alignment-left'])[2]")
+	public WebElement NewestFirst;
+	
+	
+	@FindBy(xpath = "(//div[@role='listbox'])[3]//label")
+	public List <WebElement> AllNewestFirst;
+	
+	
+	@FindBy(xpath = "(//label[text()='Oldest First'])[1]")
+	public WebElement OldestFirstText;
+	
+	@FindBy(xpath = "(//div[@class='drop-select__current-option'])[4]")
+	public WebElement AllGeneres;
+	
+	@FindBy(xpath = "(//div[@role='listbox'])[4]//label")
+	public List <WebElement> AllGeneresList;
+	
+	@FindBy(xpath = "(//label[text()='Drama'])[1]")
+	public  WebElement Drama;
+	
 	
 	
 
