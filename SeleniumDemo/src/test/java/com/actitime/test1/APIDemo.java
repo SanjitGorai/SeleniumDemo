@@ -13,18 +13,17 @@ public class APIDemo {
 		RestAssured.baseURI="https://reqres.in";
 		Response response =  RestAssured.given().queryParam("page", 2).
 				 when().get("/api/users").then().extract().response();
+				response.prettyPrint();
 		
-		response.prettyPrint();
-		
-//		 JsonPath js= new JsonPath(response.asString());
-//		String total= js.getString("data[2].last_name");
-//		int number = Integer.parseInt(total);
-//		char ch[]=total.toCharArray();
-//		System.out.println(ch);
-//		for(int i=0;i<total.length();i++) {
-//			
-//		}
-//		System.out.println(total);
+		 JsonPath js= new JsonPath(response.asString());
+		String total= js.getString("data[2].last_name");
+		int number = Integer.parseInt(total);
+		char ch[]=total.toCharArray();
+		System.out.println(ch);
+		for(int i=0;i<total.length();i++) {
+			
+		}
+		System.out.println(total);
 		
 		
 //		Response response=	RestAssured.given()
