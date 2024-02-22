@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.actitime.test1.Mewatch">
+      <class name="com.actitime.test1.LoginTest">
         <methods>
           <include name="killBrowser"/>
           <include name="killReport"/>
-          <include name="ValidateAllFeatured"/>
           <include name="intializationReportConfig"/>
+          <include name="SearchValidation"/>
           <include name="launchWeb"/>
           <include name="startReport"/>
         </methods>
-      </class> <!-- com.actitime.test1.Mewatch -->
+      </class> <!-- com.actitime.test1.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

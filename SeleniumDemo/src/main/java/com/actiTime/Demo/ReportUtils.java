@@ -1,5 +1,10 @@
 package com.actiTime.Demo;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.Optional;
 
@@ -30,6 +35,7 @@ public class ReportUtils {
 		test=report.createTest(className);
 	}
 	public void logStatus(String status,String useCase) {
+		BaseTest baseTest = new BaseTest();
 		if(status.contains("INFO")) {
 			test.info(MarkupHelper.createLabel(useCase, ExtentColor.BLUE));	
 		}
@@ -43,4 +49,9 @@ public class ReportUtils {
 			test.warning(MarkupHelper.createLabel(useCase, ExtentColor.YELLOW));
 		}
 	}
+
+	public void addScreenshot(String tests) {
+		test.addScreenCaptureFromPath(tests);
+	}
+
 }

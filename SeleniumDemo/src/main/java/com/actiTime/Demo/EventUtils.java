@@ -1,15 +1,20 @@
 package com.actiTime.Demo;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -32,7 +37,16 @@ public class EventUtils  {
 
 	public void clickOnElement(WebElement ele) {  
 		reportUtils=new ReportUtils();
-		ele.click();
+		try {
+			ele.click();
+		} catch (Exception e) {
+			try {
+				reportUtils.addScreenshot(getScreenShot("unable"));
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 		reportUtils.logStatus("INFO", "user successfully click on particular element");
 	}
 
@@ -141,5 +155,15 @@ public class EventUtils  {
 		String s = data.formatCellValue(sheetAt.getRow(i).getCell(j));
 		return s;
 	}
+	
+public String getScreenShot(String TestName) throws Exception {
+		
+		File src=driver.getScreenshotAs(OutputType.FILE);
+		String fileName=System.getProperty("user.dir")+"/ScreenShots/"+TestName+".png";
+		File dest=new File(fileName);
+		FileUtils.copyFile(src, dest);
+		return fileName;
+	}
+	
 }
 

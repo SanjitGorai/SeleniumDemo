@@ -66,6 +66,8 @@ public class LoginTest extends BaseTest {
 				// Thread.sleep(9000);
 			   }else {
 				   logStatus("FAIL","Validation of FullScreenButton button on playback Page"); 
+				   addScreenshot(eventUtils.getScreenShot("SearchValidatio"));
+				   
 			   }
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
