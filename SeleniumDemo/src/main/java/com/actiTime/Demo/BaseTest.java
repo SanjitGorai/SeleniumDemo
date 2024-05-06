@@ -22,8 +22,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import com.actiTime.Demo.WebConstants;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseTest extends ReportUtils{
 
@@ -41,17 +42,17 @@ public class BaseTest extends ReportUtils{
 	@BeforeMethod
 	public void launchWeb() {
 		if(WebConstants.browser.contains("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			
 			ChromeOptions optiom=new ChromeOptions();
 			optiom.addArguments("--headless");
 			driver = new ChromeDriver();	
 		}
 		else if(WebConstants.browser.contains("edge")) {
-			WebDriverManager.edgedriver().setup();
+			
 			driver = new EdgeDriver();
 		}
 		else if(WebConstants.browser.contains("firefox")){
-			WebDriverManager.firefoxdriver().setup();
+			
 			driver = new FirefoxDriver();
 		}
 		else {

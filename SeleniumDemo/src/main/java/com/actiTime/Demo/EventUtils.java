@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -15,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -63,9 +65,9 @@ public class EventUtils  {
 		return p.getProperty(value);
 	} 
 
-	public boolean waitUntillElementIsPresent(WebElement ele,int time) {
+	public boolean waitUntillElementIsPresent(WebElement ele,int i) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, time);
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(i));
 			wait.until(ExpectedConditions.visibilityOf(ele));
 			return true;
 		} catch (Exception e) {
@@ -150,7 +152,7 @@ public class EventUtils  {
 	public String getDataFromexcel(int i,int j)throws Exception {
 		DataFormatter data=new DataFormatter();
 		FileInputStream fis=new FileInputStream("D:\\SeleniumDemo\\SeleniumDemo\\Book1.xlsx");
-		XSSFWorkbook wb=new XSSFWorkbook(fis);
+		XSSFWorkbook wb =new XSSFWorkbook(fis);
 		XSSFSheet sheetAt = wb.getSheetAt(0);			
 		String s = data.formatCellValue(sheetAt.getRow(i).getCell(j));
 		return s;
