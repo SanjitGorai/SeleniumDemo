@@ -1,9 +1,13 @@
 package com.actiTime.Demo;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.GeckoDriverService;
@@ -18,8 +22,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import com.actiTime.Demo.WebConstants;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseTest extends ReportUtils{
 
@@ -37,20 +42,26 @@ public class BaseTest extends ReportUtils{
 	@BeforeMethod
 	public void launchWeb() {
 		if(WebConstants.browser.contains("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			
+			ChromeOptions optiom=new ChromeOptions();
+			optiom.addArguments("--headless");
 			driver = new ChromeDriver();	
 		}
 		else if(WebConstants.browser.contains("edge")) {
-			WebDriverManager.edgedriver().setup();
+			
 			driver = new EdgeDriver();
 		}
-		else {
-			WebDriverManager.firefoxdriver().setup();
+		else if(WebConstants.browser.contains("firefox")){
+			
 			driver = new FirefoxDriver();
 		}
+		else {
+	        throw new IllegalArgumentException("Invalid browser type: " + WebConstants.browser);
+	    }
 
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
 
 	}	
 
@@ -63,7 +74,8 @@ public class BaseTest extends ReportUtils{
 	public void killReport() {
 		report.flush();
 
-
 	}
+	
+
 
 }
