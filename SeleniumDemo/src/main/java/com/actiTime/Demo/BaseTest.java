@@ -30,7 +30,7 @@ public class BaseTest extends ReportUtils{
 
 	public RemoteWebDriver driver;
 
-
+	//sajit prasad gorai
 	@BeforeSuite
 	public void intializationReportConfig() {
 		intializedReport();

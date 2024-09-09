@@ -28,6 +28,7 @@ public class LoginTest extends BaseTest {
 			String pwd = eventUtils.getDataFromexcel(0, 1); 
 			System.out.println(user+"    "+pwd);
 			eventUtils.sendValue(loginPage.user,user);
+			Thread.sleep(5000);
 			eventUtils.sendValue(loginPage.pwd, pwd);
 			Thread.sleep(2000);
 			eventUtils.clickOnElement(loginPage.login);
