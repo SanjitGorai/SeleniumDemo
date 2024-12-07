@@ -20,13 +20,15 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void loginValidation() throws Exception{
 		try {
-			loginPage = new LoginPage(driver);	
+			loginPage = new LoginPage(driver);
 			eventUtils= new EventUtils(driver);
 			eventUtils.navigateToUrl(WebConstants.url);
 			logStatus("INFO", "user successfully navigate to particular url");
-			String user = eventUtils.getData("username");
-			String pwd = eventUtils.getData("password");
+			String user = eventUtils.getDataFromexcel(0, 0);
+			String pwd = eventUtils.getDataFromexcel(0, 1); 
+			System.out.println(user+"    "+pwd);
 			eventUtils.sendValue(loginPage.user,user);
+			Thread.sleep(5000);
 			eventUtils.sendValue(loginPage.pwd, pwd);
 			Thread.sleep(2000);
 			eventUtils.clickOnElement(loginPage.login);
@@ -62,6 +64,8 @@ public class LoginTest extends BaseTest {
 				// Thread.sleep(9000);
 			   }else {
 				   logStatus("FAIL","Validation of FullScreenButton button on playback Page"); 
+				   addScreenshot(eventUtils.getScreenShot("SearchValidatio"));
+				   
 			   }
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
